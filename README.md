@@ -1,4 +1,4 @@
-##  Teste para desenvolvedor back-end junior
+#  Teste para desenvolvedor back-end junior
 #### Criado por Everton Sávio Santos Lucas
 ---     
 
