@@ -27,13 +27,13 @@ Body: Json
   "name": "nome do dispositivo",
   "mac": "mac do dispositivo",
   "email": "email do dono do dispositivo",
-  "latitude": latitude,
-  "longitude": longitude
+  "latitude": "latitude",
+  "longitude": "longitude"
 }
 
 Response: 201
 {
-  "deviceId": id do dispositivo (gerado no back-end),
+  "deviceId": "id do dispositivo (gerado no back-end)",
   "mac": "mac do dispositivo"
 }
 
@@ -47,20 +47,20 @@ Verbo: GET
 Response: 200
 [
   {
-    "deviceId": id do dispositivo 1 (gerado no back-end),
+    "deviceId": "id do dispositivo 1 (gerado no back-end)",
     "name": "nome do dispositivo 1",
     "mac": "mac do dispositivo 1",
     "email": "email do dono do dispositivo 1",
-    "latitude": latitude 1,
-    "longitude": longitude 1,
+    "latitude": "latitude 1",
+    "longitude": "longitude 1",
   },
   {
-    "deviceId": id do dispositivo 2 (gerado no back-end),
+    "deviceId": "id do dispositivo 2 (gerado no back-end)",
     "name": "nome do dispositivo 2",
     "mac": "mac do dispositivo 2",
     "email": "email do dono do dispositivo 2",
-    "latitude": latitude 2,
-    "longitude": longitude 2
+    "latitude": "latitude 2",
+    "longitude": "longitude 2"
   },
   ...
 
@@ -74,12 +74,12 @@ Verbo: GET
 
 Response: 200
 {
-  "deviceId": id do dispositivo 1 (gerado no back-end),
+  "deviceId": "id do dispositivo 1 (gerado no back-end)",
   "name": "nome do dispositivo 1",
   "mac": "mac do dispositivo 1",
   "email": "email do dono do dispositivo 1",
-  "latitude": latitude 1,
-  "longitude": longitude 1,
+  "latitude": "latitude 1",
+  "longitude": "longitude 1",
 }
 ```
 ---
