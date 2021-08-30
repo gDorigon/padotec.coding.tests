@@ -1,5 +1,5 @@
 #  Teste para desenvolvedor back-end junior
-#### Criado por Everton Sávio Santos Lucas
+
 ---     
 
 ## Criação da API de cadastro de dispositivos
