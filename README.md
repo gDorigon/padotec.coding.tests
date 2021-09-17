@@ -15,7 +15,7 @@ Database: H2 in memory
 ```
 
 ---
-### Três funcionalidades deverão ser desenvolvidas:
+### As seguintes funcionalidades deverão ser desenvolvidas:
 
 1. **Cadastro de um único dispositivo IoT**: Cadastro simples de dispositivo
 
