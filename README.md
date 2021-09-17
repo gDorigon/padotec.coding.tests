@@ -107,6 +107,8 @@ Body: Json
   ...
 
 ]
+
+Response: 202
 ```
 ---
 ## Considerações finais  
