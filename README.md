@@ -84,13 +84,34 @@ Response: 200
 ```
 ---
 
-4. **Desafio Bônus:**  Containerização da aplicação com Docker.  
-```
-Criar uma Dockerfile para a aplicação desenvolvida
+4. **Desafio Bônus:**  Cadastro de vários dispositivos IoT: Poderá ser enviado uma lista com diversos dispositivos para cadastro de uma única só vez, para isso esses cadastros deverão ser processados de forma assíncrona. Esse endpoint deve enviar uma mensagem para uma fila do RabbitMQ para que seja processado em um outro serviço separado.
+```json
+Request URI: "/registrar/async";
+Verbo: POST
+Body: Json
+[
+  {
+    "name": "nome do dispositivo 1",
+    "mac": "mac do dispositivo 1",
+    "email": "email do dono do dispositivo 1",
+    "latitude": "latitude 1",
+    "longitude": "longitude 1",
+  },
+  {
+    "name": "nome do dispositivo 2",
+    "mac": "mac do dispositivo 2",
+    "email": "email do dono do dispositivo 2",
+    "latitude": "latitude 2",
+    "longitude": "longitude 2"
+  },
+  ...
+
+]
 ```
 ---
-## Considerações finais
-1. Descrever as instruções para executar a aplicação preferencialmente no README.md
-2. Disponibilizar a aplicação em seu Github informando a url para acesso.
-
+## Considerações finais  
+1. Considerar a criação de uma Dockerfile para a aplicação desenvolvida.
+2. Descrever as instruções para executar a aplicação preferencialmente no README.md
+3. Disponibilizar a aplicação em seu Github informando a url para acesso.
+  
 ---
