@@ -1,4 +1,4 @@
-#  Desafio para desenvolvedor back-end junior
+#  Desafio para pessoa desenvolvedora back-end junior
 
 ---     
 

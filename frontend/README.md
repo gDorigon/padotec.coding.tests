@@ -1,4 +1,4 @@
-## Desafio para desenvolvedor frontend jr  
+## Desafio para pessoa desenvolvedora frontend jr  
 
 ---
 
@@ -49,3 +49,6 @@ userId                               | Log                                      
 lockId                               | Log                                                            | Data
 13b2b0c8-c911-435e-b53d-1093aa774da1 | Jõao da Silva abriu essa porta as 7:57AM por biometria digital | 02/10/2021 7:57AM BRT
 ```
+> OBS: Os logs acima são o exemplo mais simples. Você pode incrementar e alterar o formato de exibição, desde que os requisitos sejam alcançados.
+
+> Bom sorte! :D
