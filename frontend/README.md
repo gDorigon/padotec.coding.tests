@@ -17,12 +17,15 @@
 * Caso a visualização escolhida seja por usuário, deve ser possível filtrar pelo nome do usuário ou pelo seu userId.
 * Caso a visualização escolhida seja por fechadura, deve ser possível filtrar pelo mac ou pelo seu lockId.
 * Escolher um framework ou biblioteca para realizar o desafio
-Opção 1 - [] Angular
-Opção 2 - [] React
+> Opção 1 
+- [ ] Angular
+> Opção 2 
+- [ ] React  
 * A aplicação deve ser entregue com um a Dockerfile com as instruções de como executa-lo no README.md
 * Sinta-se a vontade para criar a aplicação da melhor forma que encontrar desde que atenda os requisitos solicitados.
 * Sinta-se a vontade para incrementar os dados do data.json com maior variação de metodos e horarios, desde que sigam o mesmo formato.
 * Diferenciais: Utilizar REDUX.js para controle de estado com Store, Tests, Utilizar TypeScript caso feito com React.js.
+* Caso encontre alguma dificuldade nos dados do data.json que impossibilite a execução do desafio, sinta-se livre para altera-lo. Entretanto você deve descrever essas alterações no README.md e o motivo da alteração.
 
 ### Os seguintes campos devem ser utilizados na aplicação:
 1. lockId: identificador da fechadura digital.
