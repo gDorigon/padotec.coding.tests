@@ -51,4 +51,4 @@ lockId                               | Log                                      
 ```
 > OBS: Os logs acima são o exemplo mais simples. Você pode incrementar e alterar o formato de exibição, desde que os requisitos sejam alcançados.
 
-> Bom sorte! :D
+> Boa sorte! :D
