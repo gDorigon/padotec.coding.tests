@@ -12,6 +12,7 @@ Requisitos técnicos:
 Linguagem: Java 11
 Framework: Spring / Spring Boot
 Database: H2 in memory
+Mensageria: RabbitMQ
 ```
 
 ---
@@ -84,7 +85,8 @@ Response: 200
 ```
 ---
 
-4. **Desafio Bônus:**  Cadastro de vários dispositivos IoT: Poderá ser enviado uma lista com diversos dispositivos para cadastro de uma única só vez, para isso esses cadastros deverão ser processados de forma assíncrona. Esse endpoint deve enviar uma mensagem para uma fila do RabbitMQ para que seja processado em um outro serviço separado.
+4. Cadastro de vários dispositivos IoT: Poderá ser enviado uma lista com diversos dispositivos para cadastro de uma única só vez, para isso esses cadastros deverão ser processados de forma assíncrona. Dessa forma esse endpoint confirma que a requisição foi aceita e envia os dados para uma fila (Queue) do RabbitMQ. Implementar também um "Listener" que deve escutar essa fila (Queue) e processar o registro dos usuários.
+
 ```json
 Request URI: "/registrar/async";
 Verbo: POST
@@ -111,9 +113,7 @@ Body: Json
 Response: 202
 ```
 ---
-## Considerações finais  
-1. Considerar a criação de uma Dockerfile para a aplicação desenvolvida.
-2. Descrever as instruções para executar a aplicação preferencialmente no README.md
-3. Disponibilizar a aplicação em seu Github informando a url para acesso.
-  
+5. Criar uma Dockerfile para a aplicação desenvolvida.  
+6. Descrever as instruções para executar a aplicação preferencialmente no README.md  
+7. Disponibilizar a aplicação em seu Github informando a url para acesso.  
 ---
