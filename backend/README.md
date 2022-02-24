@@ -85,7 +85,7 @@ Response: 200
 ```
 ---
 
-4. Cadastro de vários dispositivos IoT: Poderá ser enviado uma lista com diversos dispositivos para cadastro de uma única só vez, para isso esses cadastros deverão ser processados de forma assíncrona. Dessa forma esse endpoint confirma imediatamente que a requisição foi aceita enviando os dados para uma fila (Queue) do RabbitMQ. Implementar também um "Listener" que deve escutar essa fila (Queue) e processar o cadastro dos dispositivos.
+4. Cadastro de vários dispositivos IoT: Poderá ser enviado uma lista com diversos dispositivos para cadastro de uma única só vez, para isso esses cadastros deverão ser processados de forma assíncrona. Dessa forma esse endpoint confirma imediatamente que a requisição foi aceita (STATUS 202) enviando os dados para uma fila (Queue) do RabbitMQ. Implementar também um "Listener" que deve escutar essa fila (Queue) e processar o cadastro dos dispositivos.
 
 ```json
 Request URI: "/registrar/async";
