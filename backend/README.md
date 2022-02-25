@@ -13,6 +13,8 @@ Linguagem: Java 11
 Framework: Spring / Spring Boot
 Database: H2 in memory
 Mensageria: RabbitMQ
+Git: Para cada desafio a seguir (1, 2, 3, 4, 5, 6), deve ser criado uma branch com os commits da funcionalidade, 
+realize os merges com a branch principal mas não delete as branches criadas ao decorrer dos desafios.
 ```
 
 ---
@@ -117,3 +119,5 @@ Response: 202
 6. Descrever as instruções para executar a aplicação preferencialmente no README.md  
 7. Disponibilizar a aplicação em seu Github informando a url para acesso.  
 ---
+
+Boa sorte! =}
