@@ -1,54 +1,64 @@
-## Desafio para pessoa desenvolvedora frontend jr  
+## Desafio para Desenvolvedor Full-Stack P&D (Front-end)  
 
 ---
 
 ## Criação de Aplicação Para Mostrar Logs de Acesso
   
-* A empresa XYZ precisa de um sistema para visualizar os acessos dos usuários a um local. Esse local possui um sistema de controle de acesso por fechaduras digitais que possuem acesso biométrico por digital e por aplicativo.  
+* A empresa FGH precisa de um sistema para visualizar os acessos dos usuários a um local. Esse local possui um sistema de controle de acesso que contém leitores de cartões RFID, e destravamento por aplicativo.  
   
-* Você deve construir uma aplicação para mostrar os logs de acesso a equipe de segurança.
+* Você deve construir uma aplicação, no **Framework React**, para mostrar os logs de acesso a equipe de segurança.
 
 
 ### Instruções
-1. Você deve consumumir dados de exemplo do arquivo data.json, realizando um "fetch" nos dados como se estivesse acessando uma API.
-2. Renderizar a informação dos logs na tela com os seguintes requisitos:
-* O usuário poderá escolher ver os logs por fechadura digital ou por usuários.
-* A exibição dos logs decrescente, do ultimo log para o primeiro utilizando o logId.
-* Caso a visualização escolhida seja por usuário, deve ser possível filtrar pelo nome do usuário ou pelo seu userId.
-* Caso a visualização escolhida seja por fechadura, deve ser possível filtrar pelo mac ou pelo seu lockId.
-* Escolher um framework ou biblioteca para realizar o desafio
-> Opção 1 
-- [ ] Angular
-> Opção 2 
-- [ ] React  
-* A aplicação deve ser entregue com um a Dockerfile com as instruções de como executa-lo no README.md
-* Sinta-se a vontade para criar a aplicação da melhor forma que encontrar desde que atenda os requisitos solicitados.
-* Sinta-se a vontade para incrementar os dados do data.json com maior variação de metodos e horarios, desde que sigam o mesmo formato.
-* Diferenciais: Utilizar REDUX.js para controle de estado com Store, Tests, Utilizar TypeScript caso feito com React.js.
-* Caso encontre alguma dificuldade nos dados do data.json que impossibilite a execução do desafio, sinta-se livre para altera-lo. Entretanto você deve descrever essas alterações no README.md e o motivo da alteração.
+1. Você deve consumir dados de exemplo do arquivo `data.json`, realizando um _fetch_ nos dados como se estivesse acessando uma API.
+
+2. Renderizar a informação dos logs na tela com os **seguintes requisitos**:
+
+   * A exibição dos logs deverá ser decrescente, ordenando pelo `logId`.
+   * O administrador poderá escolher ver os logs por `Dispositivo de Segurança` ou por `Usuários`.
+   * Caso a visualização escolhida seja por:
+     * **Usuário**: deve ser possível filtrar por:
+       *  `nome do usuário`.
+       *  `userId`.
+     * **Dispositivo de Segurança**: deve ser possível filtrar por:
+       *  `mac`.
+       *  `lockId`.
+   * Sinta-se a vontade para:
+     * Criar a aplicação da melhor forma que encontrar, desde que atenda os requisitos solicitados.
+     * Incrementar os dados do `data.json` com maior variação de metodos e horarios, desde que sigam o mesmo formato.
+3. Não é permitido alterar os dados do arquivo `data.json`.
+
+### Preparação do Material Desenvolvido
+
+* A aplicação deve ser entregue com um Dockerfile com as instruções de como executa-lo no README.md
+
 
 ### Os seguintes campos devem ser utilizados na aplicação:
-1. lockId: identificador da fechadura digital.
-2. mac: mac address da fechadura digital.
-3. payload.logId: número do log por fechadura.
-4. payload.timestamp: horario do evento.
-5. payload.type: tipo do envento. usar: 1 -> abertura, 2 -> trancamento
-6. payload.method: metodo de execução. usar: 3 -> digital -> 4 aplicativo
-7. payload.isLocked: Estado atual da fechadura. Fechada ou aberta.
-8. payload.userId: id de identificação do usuário.
-9. payload.useerName: nome do usuário
+
+| Parâmetro             | Descrição                                                                                            |
+| :-------------------- | :--------------------------------------------------------------------------------------------------- |
+| **lockId**            | Identificador do dispositivo de segurança, que permite, ou não, o destravamento da porta.            |
+| **mac**               | Endereço MAC (Ex: AA:BB:CC:DD:EE:FF) do dispositivo de segurança, sendo único para cada dispositivo. |
+| **payload.logId**     | Número do log gerado.                                                                                |
+| **payload.timestamp** | Horario do evento.                                                                                   |
+| **payload.type**      | Tipo do evento. Onde: `1` = abertura, `2` = travamento.                                              |
+| **payload.method**    | Método de acesso. Onde: `3` = Cartão RFID, `4` = aplicativo.                                         |
+| **payload.isLocked**  | Estado atual do dispositivo de segurança, sendo: `true` = Trancado, `false` = Destrancado.           |
+| **payload.userId**    | Identificador do usuário.                                                                            |
+| **payload.userName**  | nome do usuário.                                                                                     |
 ---
 
-### Exemplo de log por fechadura
+### Exemplo de log por Dispositivo de Segurança
 ```
 userId                               | Log                                                            | Data
-13b2b0c8-c911-435e-b53d-1093aa774da1 | Jõao da Silva abriu essa porta as 7:57AM por biometria digital | 02/10/2021 7:57AM BRT
+13b2b0c8-c911-435e-b53d-1093aa774da1 | Jõao da Silva abriu essa porta as 7:57AM por Cartão de Acesso  | 02/10/2021 7:57AM BRT
 ```
-### Exemplo de log por usuário
+### Exemplo de log por Usuário
 ```
 lockId                               | Log                                                            | Data
-13b2b0c8-c911-435e-b53d-1093aa774da1 | Jõao da Silva abriu essa porta as 7:57AM por biometria digital | 02/10/2021 7:57AM BRT
+13b2b0c8-c911-435e-b53d-1093aa774da1 | Jõao da Silva abriu essa porta as 7:57AM por Cartão de Acesso  | 02/10/2021 7:57AM BRT
 ```
-> OBS: Os logs acima são o exemplo mais simples. Você pode incrementar e alterar o formato de exibição, desde que os requisitos sejam alcançados.
 
-> Boa sorte! :D
+**Observação**: Os logs acima são apenas exemplos de implementação. Você pode incrementar e/ou alterar o formato de exibição.
+
+🍀 Boa sorte! 🍀

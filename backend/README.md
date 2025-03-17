@@ -1,4 +1,4 @@
-#  Desafio para pessoa desenvolvedora back-end junior
+#  Desafio para Desenvolvedor Full-Stack P&D (Back-end)  
 
 ---     
 
@@ -6,22 +6,25 @@
 
 **Descrição:** A Empresa XYZ deseja desenvolver um sistema para cadastro de seus dispositivos IoT, dessa forma, você como desenvolvedor back-end deverá desenvolver as API's necessárias.
 
-```
+``` 
 Requisitos técnicos:
 
-Linguagem: Java 11
-Framework: Spring / Spring Boot
-Database: H2 in memory
-Mensageria: RabbitMQ
-Git: Para cada desafio a seguir (1, 2, 3, 4, 5, 6), deve ser criado uma branch com os commits da funcionalidade, 
-realize os merges com a branch principal mas não delete as branches criadas ao decorrer dos desafios.
+Mínimo
+- Linguagem: Javascript (Node.js)
+- Framework: Express.js ou NestJS
+- Database: A critério do candidato
+- Git: Fazer o fork do repositório (de forma pública) e realizar um commit para cada desafio.
+
+Diferenciais
+- Documentação e comentários no código.
+
 ```
 
 ---
 ### As seguintes funcionalidades deverão ser desenvolvidas:
 
-1. **Cadastro de um único dispositivo IoT**: Cadastro simples de dispositivo
-
+1. **Rota de Cadastro de dispositivo IoT**:
+   
 ```json
 Request URI: "/registrar";
 Verbo: POST
@@ -30,8 +33,7 @@ Body: Json
   "name": "nome do dispositivo",
   "mac": "mac do dispositivo",
   "email": "email do dono do dispositivo",
-  "latitude": "latitude",
-  "longitude": "longitude"
+  "timestamp": "Horário do cadastro em Epoch/Unix"
 }
 
 Response: 201
@@ -41,6 +43,9 @@ Response: 201
 }
 
 ```
+
+**Observação**: Tratar possíveis erros (exemplo: Mac já existente).
+
 ---
 2. **Listar todos os dispositivos cadastrados**: Todos os dispositivos são retornados em uma lista de objetos
 ```json
@@ -54,16 +59,14 @@ Response: 200
     "name": "nome do dispositivo 1",
     "mac": "mac do dispositivo 1",
     "email": "email do dono do dispositivo 1",
-    "latitude": "latitude 1",
-    "longitude": "longitude 1",
+    "timestamp": "Horário do cadastro em Epoch/Unix do dispositivo 1"
   },
   {
     "deviceId": "id do dispositivo 2 (gerado no back-end)",
     "name": "nome do dispositivo 2",
     "mac": "mac do dispositivo 2",
     "email": "email do dono do dispositivo 2",
-    "latitude": "latitude 2",
-    "longitude": "longitude 2"
+    "timestamp": "Horário do cadastro em Epoch/Unix do dispositivo 2"
   },
   ...
 
@@ -81,43 +84,17 @@ Response: 200
   "name": "nome do dispositivo 1",
   "mac": "mac do dispositivo 1",
   "email": "email do dono do dispositivo 1",
-  "latitude": "latitude 1",
-  "longitude": "longitude 1",
+  "timestamp": "Horário do cadastro em Epoch/Unix do dispositivo 1"
 }
 ```
 ---
 
-4. Cadastro de vários dispositivos IoT: Poderá ser enviado uma lista com diversos dispositivos para cadastro de uma única só vez, para isso esses cadastros deverão ser processados de forma assíncrona. Dessa forma esse endpoint confirma imediatamente que a requisição foi aceita (STATUS 202) enviando os dados para uma fila (Queue) do RabbitMQ. Implementar também um "Listener" que deve escutar essa fila (Queue) e processar o cadastro dos dispositivos.
+### Preparação do Material Desenvolvido
 
-```json
-Request URI: "/registrar/async";
-Verbo: POST
-Body: Json
-[
-  {
-    "name": "nome do dispositivo 1",
-    "mac": "mac do dispositivo 1",
-    "email": "email do dono do dispositivo 1",
-    "latitude": "latitude 1",
-    "longitude": "longitude 1",
-  },
-  {
-    "name": "nome do dispositivo 2",
-    "mac": "mac do dispositivo 2",
-    "email": "email do dono do dispositivo 2",
-    "latitude": "latitude 2",
-    "longitude": "longitude 2"
-  },
-  ...
-
-]
-
-Response: 202
-```
----
-5. Criar uma Dockerfile para a aplicação desenvolvida.  
-6. Descrever as instruções para executar a aplicação preferencialmente no README.md  
-7. Disponibilizar a aplicação em seu Github informando a url para acesso.  
+4. Criar uma Dockerfile para a aplicação desenvolvida.  
+5. Descrever as instruções para executar a aplicação preferencialmente no README.md.
+6. Disponibilizar a aplicação em seu Github informando a url para acesso.  
+   
 ---
 
-Boa sorte! =}
+🍀 Boa sorte! 🍀
