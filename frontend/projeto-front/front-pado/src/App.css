@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-color: #2B4A70;
+    height: 70px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.titulo {
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.menu-botoes {
+    /* background-color: red; */
+    display: flex;
+    padding-bottom: 20px;
+}
+
+.menu-botoes button {
+    margin-left: 20px;
+    width: 130px;
+    height: 40px;
+    border-radius: 5px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    cursor: pointer;
+    border-color: #2B4A70;
+}
+
+.menu-botoes button:hover {
+    transform: scale(1.05);
+    background-color: #61a8f3;
+    border: 0;
+    font-weight: bold;
+}
+
+.campo-busca {
+    padding-left: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.campo-busca input {
+    width: 270px;
+    height: 25px;
+    border-radius: 5px;
+    border-color: #2B4A70;
+}
+
+.campo-busca input:focus {
+    border-color: #61a8f3;
+}
+
+.titulo-lista {
+    padding-left: 20px;
+}
+
+.lista {
+    padding-left: 20px;
+    padding-bottom: 15px;
+}
+
+.item-lista {
+    padding-bottom: 10px;
+    /* border: 1px solid black; */
+    padding: 10px;
+    margin: 10px;
+    width: 700px;
+    border-radius: 5px;
+    background-color: rgb(231, 243, 253);
+}
+
+.item-lista p {
+    font-weight: bold;
+}
