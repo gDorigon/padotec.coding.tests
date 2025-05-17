@@ -1,22 +1,30 @@
-require('./config/db');
-
-
-// Importando o módulo express para lidar com rotas e middlewares
+// Importando os módulos necessários
 const express = require('express');
-
-// Inicializando a aplicação Express
-const app = express();
+const mongoose = require('mongoose');
 const deviceRoutes = require('./routes/deviceRouter');
 
-// Definindo a porta em que o servidor irá escutar
-const PORT = process.env.PORT || 3000;
+// Inicializando o app Express
+const app = express();
 
-// Configurando as rotas da aplicação para utilizar as rotas dos dispositivos
+// Conexão com o MongoDB
+const uri = process.env.MONGODB_URI || 'mongodb://localhost:27017/devicesdb';
+
+mongoose.connect(uri, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+})
+    .then(() => console.log('### SERVIDOR CONECTADO'))
+    .catch((err) => console.error('### ERRO:', err));
+
+// Middlewares
 app.use(express.json());
 
+// Rotas
 app.use('/api', deviceRoutes);
 
-// Inicializando o servidor e fazendo com que ele escute na porta definida
+// Porta de escuta
+const PORT = process.env.PORT || 3000;
+
 app.listen(PORT, () => {
-    console.log(`Servidor rodando na porta ${PORT}`);
+    console.log(`### SERVIDOR NA PORTA ${PORT}`);
 });
