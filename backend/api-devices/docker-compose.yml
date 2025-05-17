@@ -3,21 +3,26 @@ version: '3.8'
 services:
   mongo:
     image: mongo
-    container_name: mongodb
+    container_name: mongo
+    restart: always
     ports:
-      - "27017:27017"
+      - '27017:27017'
     volumes:
       - mongo-data:/data/db
 
   api:
     build: .
-    container_name: api-devices
+    container_name: api
     ports:
-      - "3001:3000"
-    depends_on:
-      - mongo
+      - '3001:3001'
     environment:
       - MONGODB_URI=mongodb://mongo:27017/devicesdb
+      - PORT=3001
+    depends_on:
+      - mongo
+    volumes:
+      - .:/app
+    command: npm start
 
 volumes:
   mongo-data:
