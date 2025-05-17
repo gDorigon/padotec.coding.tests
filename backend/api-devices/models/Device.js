@@ -1,17 +1,11 @@
 const mongoose = require('mongoose');
 
 const deviceSchema = new mongoose.Schema({
-    deviceId: Number,
-    name: String,
-    mac: String,
-    email: String,
-    timestamp: Number
-}, {
-    versionKey: false
+    deviceId: { type: Number, required: true, unique: true },
+    name: { type: String, required: true },
+    mac: { type: String, required: true, unique: true },
+    email: { type: String, required: true },
+    timestamp: { type: Number, required: true }
 });
 
-
 module.exports = mongoose.model('Device', deviceSchema);
-
-
-// Estrutura do dispositivo para o banco de dados

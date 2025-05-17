@@ -1,27 +1,27 @@
 version: '3.8'
 
 services:
-  mongo:
-    image: mongo
-    container_name: mongo
-    restart: always
-    ports:
-      - '27017:27017'
-    volumes:
-      - mongo-data:/data/db
+  # mongo:
+  #   image: mongo
+  #   container_name: mongo
+  #   restart: always
+  #   ports:
+  #     - '27017:27017'
+  #   volumes:
+  #     - mongo-data:/data/db
 
   api:
     build: .
     container_name: api
     ports:
-      - '3001:3001'
+      - '3000:3000'
     environment:
-      - MONGODB_URI=mongodb://mongo:27017/devicesdb
-      - PORT=3001
+      - MONGODB_URI=mongodb+srv://user01:user0123@cluster0.o2aas58.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
     depends_on:
       - mongo
-    volumes:
-      - .:/app
+    # Evite montar volume local enquanto estiver testando persistência no container
+    # volumes:
+    #   - .:/app
     command: npm start
 
 volumes:

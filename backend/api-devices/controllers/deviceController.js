@@ -37,13 +37,16 @@ const criaDevices = async (req, res) => {
     });
 
     // coloca o novo device no banco de dados
-    await novoDevice.save();
+    try {
+        const device = await novoDevice.save();
+        console.log('✅ Device salvo:', device);
+        res.status(201).json({ deviceId: device.deviceId, mac: device.mac });
+    } catch (error) {
+        console.error('❌ Erro ao salvar no MongoDB:', error);
+        res.status(500).json({ erro: 'Erro ao salvar dispositivo.' });
+    }
 
-    // retorna 201 e o json do novo device
-    res.status(201).json({ deviceId: novoDevice.deviceId, mac: novoDevice.mac });
 };
-
-
 
 
 // Função para buscar um device por ID

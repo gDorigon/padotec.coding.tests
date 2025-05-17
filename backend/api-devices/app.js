@@ -1,30 +1,29 @@
-// Importando os módulos necessários
 const express = require('express');
 const mongoose = require('mongoose');
 const deviceRoutes = require('./routes/deviceRouter');
 
-// Inicializando o app Express
 const app = express();
 
-// Conexão com o MongoDB
-const uri = process.env.MONGODB_URI || 'mongodb://localhost:27017/devicesdb';
+// Middleware para ler JSON
+app.use(express.json());
+
+
+
+// Conectando ao MongoDB (usa variável de ambiente ou localhost)
+const uri = process.env.MONGODB_URI || 'mongodb+srv://user01:user0123@cluster0.o2aas58.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 
 mongoose.connect(uri, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 })
-    .then(() => console.log('### SERVIDOR CONECTADO'))
-    .catch((err) => console.error('### ERRO:', err));
-
-// Middlewares
-app.use(express.json());
+    .then(() => console.log('✅ MongoDB conectado com sucesso'))
+    .catch((err) => console.error('❌ Erro ao conectar ao MongoDB:', err));
 
 // Rotas
 app.use('/api', deviceRoutes);
 
-// Porta de escuta
+// Inicializa o servidor
 const PORT = process.env.PORT || 3000;
-
 app.listen(PORT, () => {
-    console.log(`### SERVIDOR NA PORTA ${PORT}`);
+    console.log(`🚀 Servidor rodando na porta ${PORT}`);
 });
