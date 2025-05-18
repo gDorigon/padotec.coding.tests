@@ -42,8 +42,8 @@ a base da url é `http://localhost:3000`
 ### 1. Clone o projeto:
 
 ```bash
-git clone https://github.com/seu-usuario/seu-repo.git
-cd seu-repo
+git clone git@github.com:gDorigon/padotec.coding.tests.git
+cd padotec.coding.tests/backend/api-devices
 ```
 
 ### 2. Crie a imagem Docker:
