@@ -5,6 +5,15 @@ Este projeto é a interface do desafio técnico da Padotec, desenvolvido em Reac
 
 ---
 
+## 🧩 Funcionalidades
+
+- Visualização de **usuários** e **dispositivos** de segurança.
+- Campo de **busca com filtro dinâmico** para nome, ID, MAC, etc.
+- Alternância entre modos de exibição (`Usuários` e `Dispositivos`).
+- Lista com informações como nome, log ID, horário, método de acesso e estado do dispositivo.
+
+---
+
 ## 📁 Estrutura do Projeto
 
 O repositório completo está disponível em:  
@@ -74,8 +83,3 @@ docker run -p 3000:80 --name front-pado front-pado
 - A aplicação é servida pelo Nginx dentro do container.
 - Certifique-se de que a porta 3000 não esteja em uso antes de iniciar o container.
 
----
-
-## 📄 Licença
-
-Este projeto é de uso educacional/técnico e faz parte de um desafio para vaga Full-Stack P&D.
